@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo API</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class='container'>
+            <div class="row justify-content-center">
+                <h1>Todo API</h1>
+            </div>
+
+            <div class="card">
+                <h3 class="card-header">GET /todos</h3>
+                <div class="card-block">
+                    <h4 class='card-title'>Fetches all todos from the database.</h4>
+                    <p class="card-text">Doesn't need anything passed along.</p>
+                </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-header">GET /todos/:id</h3>
+              <div class="card-block">
+                  <h4 class='card-title'>Fetches a specific todo from the database.</h4>
+                  <p class="card-text">Needs the _.id and new todo object passed along.</p>
+              </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-header">POST /todos</h3>
+                <div class="card-block">
+                    <h4 class='card-title'>Creates a new todo entry.</h4>
+                    <p class="card-text">
+                      Needs the todo object passed along.
+                    <pre>
+                        <code>
+<!--                  -->{
+<!--                  -->  "title": "",
+<!--                  -->  "categories": "",
+<!--                  -->  "content": "",
+<!--                  -->  "image": ""
+<!--                  -->}
+                        </code>
+                      </pre>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-header">DELETE /todos/:id</h3>
+                <div class="card-block">
+                    <h4 class='card-title'>Deletes a specific todo.</h4>
+                    <p class="card-text">Needs the _.id passed along.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-header">PATCH /todos/:id</h3>
+                <div class="card-block">
+                    <h4 class='card-title'>Edits an existing todo.</h4>
+                    <p class="card-text">
+                      Needs the _.id and new todo object passed along.
+                      <pre>
+                        <code>
+<!--                  -->{
+<!--                  -->  "title": "",
+<!--                  -->  "categories": "",
+<!--                  -->  "content": "",
+<!--                  -->  "image": "",
+<!--                  -->  "completed": "",
+<!--                  -->  "completedAt": ""
+<!--                  -->}
+                        </code>
+                      </pre>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
