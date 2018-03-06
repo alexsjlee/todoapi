@@ -65,7 +65,7 @@ module.exports = function(app) {
   // PATCH /todos/:id
   app.patch('/todos/:id', (req, res) => {
     const id = req.params.id;
-    const { title, categories, content, image, completed } = req.body;
+    let { title, categories, content, image, completed, completedAt } = req.body;
     if (completed === true) {
       completedAt = new Date().getTime();
     } else {
