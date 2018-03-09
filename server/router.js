@@ -1,6 +1,6 @@
 let { mongoose } = require('./db/mongoose');
 const { ObjectID } = require('mongodb');
-let { Todo } = require('./models/todo');
+let todo = require('./models/todo');
 const fs = require('fs');
 
 module.exports = function(app) {
@@ -12,7 +12,7 @@ module.exports = function(app) {
   // GET /todos
   app.get('/todos', (req, res) => {
     Todo.find().then((todos) => {
-      res.send({ todos });
+      res.send(todos);
     }, (error) => {
       res.status(404).send();
     });
@@ -57,7 +57,7 @@ module.exports = function(app) {
       if (!todo) {
         return res.status(404).send();
       }
-      res.status(200).send({ todo });
+      res.status(200).send(todo);
     }, (error) => {
       return res.status(400).send(error);
     });
@@ -83,7 +83,7 @@ module.exports = function(app) {
       if (!todo) {
         res.status(404).send();
       }
-      res.send({ todo });
+      res.send(todo);
     }, (error) => {
       res.status(400).send(error)
     });
